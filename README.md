@@ -3,7 +3,7 @@ Dear Instructor,
 I have chosen to work on the project:
 "My E-Commerce Website"
 
-Repository: 
+Repository: https://github.com/hassanikhadidja/My-E-Commerce-Website-.git
 
 Only one member:
 - Hassani Khadidja Khaoila

@@ -1,14 +1,11 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
-import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -16,7 +13,7 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
-import AdminRoute from './pages/AdminRoute';
+import PrivateRoute from './pages/PrivateRoute';
 import PublicOnlyRoute from './pages/PublicOnlyRoute';
 import NotFound from './pages/NotFound';
 import './styles/global.css';
@@ -28,21 +25,19 @@ function AppLayout() {
       <Navbar />
       <main className="main-content">
         <Routes>
-          <Route path="/"            element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/checkout"    element={<Checkout />} />
-          <Route path="/about"       element={<AboutUs />} />
-          <Route path="/contact"     element={<Contact />} />
-          <Route path="/privacy"     element={<Privacy />} />
-          <Route path="/terms"       element={<Terms />} />
-          <Route path="/login"       element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
-          <Route path="/register"    element={<PublicOnlyRoute><Register /></PublicOnlyRoute>} />
-          <Route path="/dashboard"   element={<AdminRoute><Dashboard /></AdminRoute>} />
-          <Route path="*"            element={<NotFound />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
+          <Route path="/register" element={<PublicOnlyRoute><Register /></PublicOnlyRoute>} />
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 }

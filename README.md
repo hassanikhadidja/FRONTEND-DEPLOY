@@ -258,9 +258,4 @@ See **[SPEC.md](./SPEC.md)** for endpoint tables, order status values, checkout 
 
 <p align="center"><strong>Jeunes Toys</strong> — safe, colorful toys for curious minds.</p>
 
-cd backend
-npm install
-cp .env.example .env
-# Add your MongoDB URI and JWT_SECRET in .env
-npm run dev
->>>>>>> 227772de541384b4b95857a4fec709a71cca5648
+

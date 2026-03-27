@@ -13,6 +13,8 @@
 
 # misc
 .DS_Store
+# Secrets and local overrides — never commit real keys
+.env
 .env.local
 .env.development.local
 .env.test.local

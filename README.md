@@ -257,3 +257,5 @@ See **[SPEC.md](./SPEC.md)** for endpoint tables, order status values, checkout 
 ---
 
 <p align="center"><strong>Jeunes Toys</strong> — safe, colorful toys for curious minds.</p>
+
+

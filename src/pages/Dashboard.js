@@ -421,10 +421,10 @@ export default function Dashboard() {
             {usersLoading && <div className="spinner-wrap"><div className="spinner"/></div>}
             {usersError && <div className="alert alert-error">⚠️ {usersError}</div>}
             {!usersLoading && !usersError && (users.length === 0
-              ? <div className="dash-placeholder" style={{border:'none',boxShadow:'none'}}><div style={{fontSize:48}}>👤</div><h3>No clients yet</h3></div>
+              ? <div className="dash-placeholder" style={{border:'none',boxShadow:'none'}}><div style={{fontSize:48}}>👤</div><h3>No Users yet</h3></div>
               : <div className="table-wrap">
                   <table className="dash-table">
-                    <thead><tr><th>Client</th><th>Email</th><th>Role</th><th>Registered</th><th>Activity</th></tr></thead>
+                    <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Registered</th><th>Activity</th></tr></thead>
                     <tbody>
                       {users.map(u => (
                         <tr key={u._id}>

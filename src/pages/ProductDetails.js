@@ -47,12 +47,23 @@ export default function ProductDetails() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   useEffect(() => {
-    setActiveIdx(0);  // reset to first image when product changes
-    if (isAuthenticated) dispatch(fetchProductById(id));
-    if (products.length === 0) dispatch(fetchAllProducts());
+    setActiveIdx(0);                    // reset to first image when product changes
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    return () => dispatch(clearCurrentProduct());
-  }, [dispatch, id, isAuthenticated]);
+
+    // Fetch single product if user is authenticated
+    if (isAuthenticated) {
+        dispatch(fetchProductById(id));
+    }
+
+    // Only fetch all products if the list is empty
+    if (products.length === 0) {
+        dispatch(fetchAllProducts());
+    }
+
+    return () => {
+        dispatch(clearCurrentProduct());
+    };
+}, [dispatch, id, isAuthenticated, products.length]);
 
   const handleAdd = (product) => dispatch(addToCart(product));
 
